@@ -13,12 +13,12 @@ import java.util.UUID;
  */
 public class UserUUIDGenerator {
     public static void main(String[] args) throws Exception {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BiscicolAppConfig.class);
-        UserService userService = applicationContext.getBean(UserService.class);
-
-        for (User u: userService.getUsers()) {
-            u.setUUID(UUID.randomUUID());
-            userService.update(u);
-        }
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BiscicolAppConfig.class);
+//        UserService userService = applicationContext.getBean(UserService.class);
+//
+//        for (User u: userService.getUsers()) {
+//            u.setUUID(UUID.randomUUID());
+//            userService.update(u);
+//        }
     }
 }
