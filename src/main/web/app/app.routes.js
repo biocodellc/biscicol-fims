@@ -80,7 +80,7 @@ angular.module('biscicolApp')
                 controller: "ResourceTypesCtrl as vm"
             })
             .state('notFound', {
-                url: '*path',
+                url: '/404',
                 templateUrl: "app/partials/page-not-found.html"
             });
 
@@ -110,4 +110,5 @@ angular.module('biscicolApp')
             .when('/secure/expeditions.jsp', 'expeditionManager')
             .when('/secure/profile.jsp', 'profile')
             .when('/secure/projects.jsp', 'projects')
+            .otherwise('/404');
     }]);
