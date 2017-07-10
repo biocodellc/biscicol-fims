@@ -304,14 +304,14 @@ public class Run {
             if (cl.hasOption("configFile")) {
                 System.out.println("using local config file = " + cl.getOptionValue("configFile").toString());
                 // Create the process object --- this is done each time to orient the application
-                process = new Process.ProcessBuilder(FimsMetadataFileManager, processController)
+                process = new Process.ProcessBuilder(FimsMetadataFileManager, processController, fimsProperties)
                         .addFmProperties(fmProps)
                         .configFile(new File(cl.getOptionValue("configFile")))
                         .build();
 
             } else {
                 File configFile = new ConfigurationFileFetcher(projectId, output_directory, false).getOutputFile();
-                process = new Process.ProcessBuilder(FimsMetadataFileManager, processController)
+                process = new Process.ProcessBuilder(FimsMetadataFileManager, processController, fimsProperties)
                         .addFmProperties(fmProps)
                         .configFile(configFile)
                         .build();
