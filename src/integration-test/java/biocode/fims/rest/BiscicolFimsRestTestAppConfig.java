@@ -19,17 +19,17 @@ import java.util.List;
         "classpath:test-data-access-config.xml"
 })
 @EnableAspectJAutoProxy
-public class BiscicolFimsRestTestAppConfig extends FimsRestTestAppConfig {
+public class BiscicolFimsRestTestAppConfig {
 
-    @Bean
-    public WebTargetFactoryBean webTargetFactoryBean() {
-        WebTargetFactoryBean webTargetFactoryBean = super.webTargetFactoryBean();
-        List<Class<?>> componentClasses = webTargetFactoryBean.getComponentClasses();
-        componentClasses.add(MultiPartFeature.class);
-
-        webTargetFactoryBean.setComponentClasses(componentClasses);
-
-        webTargetFactoryBean.setComponentPackages(Collections.singletonList("biocode.fims.rest.services.rest"));
-        return  webTargetFactoryBean;
-    }
+//    @Bean
+//    public WebTargetFactoryBean webTargetFactoryBean() {
+//        WebTargetFactoryBean webTargetFactoryBean = super.webTargetFactoryBean();
+//        List<Class<?>> componentClasses = webTargetFactoryBean.getComponentClasses();
+//        componentClasses.add(MultiPartFeature.class);
+//
+//        webTargetFactoryBean.setComponentClasses(componentClasses);
+//
+//        webTargetFactoryBean.setComponentPackages(Collections.singletonList("biocode.fims.rest.services.rest"));
+//        return  webTargetFactoryBean;
+//    }
 }
