@@ -3,6 +3,7 @@ package biocode.fims.application.config;
 import biocode.fims.authorizers.QueryAuthorizer;
 import biocode.fims.elasticSearch.ElasticSearchIndexer;
 import biocode.fims.fileManagers.AuxilaryFileManager;
+import biocode.fims.rest.services.rest.ValidateController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 
@@ -34,5 +35,17 @@ public class BiscicolWebAppConfig {
     @Bean
     public QueryAuthorizer queryAuthorizer() {
         return new QueryAuthorizer(biscicolAppConfig.projectService, biscicolAppConfig.fimsAppConfig.fimsProperties());
+    }
+
+    @Bean
+    public ValidateController validateController() {
+        return new ValidateController(
+                biscicolAppConfig.fimsAppConfig.expeditionService,
+                biscicolAppConfig.fimsMetadataFileManager(),
+                fileManagers(),
+                biscicolAppConfig.fimsAppConfig.fimsProperties(),
+                esIndexer(),
+                biscicolAppConfig.projectService
+        );
     }
 }

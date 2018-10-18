@@ -47,7 +47,6 @@ public class ValidateController extends FimsService {
     private final ElasticSearchIndexer esIndexer;
     private final ProjectService projectService;
 
-    @Autowired
     public ValidateController(ExpeditionService expeditionService, FimsMetadataFileManager fimsMetadataFileManager,
                               List<AuxilaryFileManager> fileManagers, FimsProperties props,
                               ElasticSearchIndexer esIndexer, ProjectService projectService) {
