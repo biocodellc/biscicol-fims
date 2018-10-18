@@ -72,6 +72,7 @@ dependencies {
     server group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
     server 'org.apache.poi:poi:3.10.1'
     server 'org.apache.poi:poi-ooxml:3.10.1'
+    server 'com.googlecode.lambdaj:lambdaj:2.3.3'
 
     server group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
     compile composite.resolveDependency("org.biocode:biocode-fims-commons:${fimsCommonsVersion}", "biocode-fims-commons")
