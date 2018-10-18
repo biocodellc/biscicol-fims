@@ -38,6 +38,7 @@ public class BiscicolWebAppConfig {
     }
 
     @Bean
+    @Scope("prototype")
     public ValidateController validateController() {
         return new ValidateController(
                 biscicolAppConfig.fimsAppConfig.expeditionService,
