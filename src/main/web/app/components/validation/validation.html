@@ -14,9 +14,10 @@
                             <td><input type="file" class="btn btn-default btn-xs" name="fimsMetadata" id="dataset" /></td>
                         </tr>
 
-                        <tr class="toggle-content" id="projects_toggle">
+                        <!--<tr class="toggle-content" id="projects_toggle2">-->
+                        <tr>
                             <td align=right>&nbsp;&nbsp;Choose Project&nbsp;&nbsp;</td>
-                            <td><project-select></project-select></td>
+                            <td><project-select on-project-change="vm.handleProjectChange(projectId)"></project-select></td>
                         </tr>
 
                         <tr>
@@ -25,7 +26,10 @@
                                 <span ng-show="!vm.isAuthenticated">
                                     <input ng-show="!vm.isAuthenticated" type="checkbox" disabled="disabled" /> (login to upload)
                                 </span>
-                                <input ng-show="vm.isAuthenticated" type="checkbox" id="upload" name="upload" value="true"/>
+                                <span ng-show="vm.isAuthenticated && !vm.canUpload()">
+                                    <input type="checkbox" disabled="disabled" /> (project is read-only and most likely has been ported to <a href='https://geome-db.org'>GeOMe Database</a>)
+                                </span>
+                                <input ng-show="vm.isAuthenticated && vm.canUpload()" type="checkbox" id="upload" name="upload" value="true"/>
                             </td>
                         </tr>
 

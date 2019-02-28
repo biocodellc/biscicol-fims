@@ -10,7 +10,8 @@ angular.module('biscicolApp')
             bindToController: {
                 projectId: "=?",
                 selectClasses: '@',
-                publicBtnClasses: '@'
+                publicBtnClasses: '@',
+                onProjectChange: '&',
             },
             link: function ($scope, $element, $attributes) {
                 $rootScope.$broadcast('projectSelectLoadedEvent');
@@ -73,6 +74,7 @@ angular.module('biscicolApp')
                 } else {
                     vm.projectId = null;
                 }
+                vm.onProjectChange({projectId: vm.projectId});
             });
         }]);
 

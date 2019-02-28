@@ -28,8 +28,6 @@
                         <li><a ui-sref="lookup" class='enabled'>ID Lookup</a></li>
                         <li ng-show="!vm.isAuthenticated"><a href='#' class='disabled'>Expedition Manager</a></li>
                         <li ng-show="vm.isAuthenticated"><a ui-sref="expeditionManager" class='enabled'>Expedition Manager</a></li>
-                        <li ng-show="!vm.isAuthenticated"><a href='#' class='disabled'>BCID Creator</a></li>
-                        <li ng-show="vm.isAuthenticated"><a ui-sref="creator" class='enabled'>BCID Creator</a></li>
                         <li ng-show="vm.isAdmin"><a ui-sref='projects' class='enabled'>Project Manager</a></li>
                         <li ng-show="!vm.isAdmin"><a href='#' class='disabled'>Project Manager</a></li>
                     </ul>

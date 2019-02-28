@@ -1069,7 +1069,7 @@ function validationFormToggle() {
                 p.prop('disabled', false);
                 $('#includePublic').prop('disabled', false);
                 if (!$("#dataset").val()) {
-                    $(".toggle-content#projects_toggle").hide(400);
+                    // $(".toggle-content#projects_toggle").hide(400);
                 } else if ($('.toggle-content#projects_toggle').is(':hidden')) {
                     $('.toggle-content#projects_toggle').show(400);
                 }
@@ -1229,7 +1229,7 @@ function uploadResults(data) {
         dialog(message, title, buttons);
         // reset the form to default state
         $('form').clearForm();
-        $('.toggle-content#projects_toggle').hide(400);
+        // $('.toggle-content#projects_toggle').hide(400);
         $('.toggle-content#expedition_public_toggle').hide(400);
         $('.toggle-content#expeditionCode_toggle').hide(400);
 

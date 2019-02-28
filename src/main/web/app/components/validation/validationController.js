@@ -4,6 +4,17 @@ angular.module('fims.validation', ['fims.users'])
     function ($rootScope, $scope, $location, AuthFactory) {
         var vm = this;
         vm.isAuthenticated = AuthFactory.isAuthenticated;
+        const uploadWhitelist = [5,8,9,10,11,23,24];
+        var currentProject = undefined;
+        vm.handleProjectChange = function handleProjectChange(projectId) {
+            currentProject = projectId;
+            if (!vm.canUpload()) {
+              $('#upload').prop('checked', false);
+            }
+        }
+        vm.canUpload = function() {
+            return !currentProject || uploadWhitelist.indexOf(currentProject) > -1
+        }
 
         $rootScope.$on('projectSelectLoadedEvent', function(event){
             fimsBrowserCheck($('#warning'));
